@@ -6,7 +6,7 @@ function StudentApp({ socket, activePoll, liveResults }) {
     const [selectedOption, setSelectedOption] = useState(null);
 
     // Per-student timer states
-    const [personalPollStartTime, setPersonalPollStartTime] = useState(null);
+    // const [personalPollStartTime, setPersonalPollStartTime] = useState(null);
     const [personalPollRemainingTime, setPersonalPollRemainingTime] = useState(null);
     const [isPersonalPollActive, setIsPersonalPollActive] = useState(false); // Crucial state
     const personalCountdownIntervalRef = useRef(null);
