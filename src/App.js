@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import TeacherApp from './TeacherApp';
 import StudentApp from './StudentApp';
 import './App.css';
@@ -55,7 +55,7 @@ function App() {
         socket.off('disconnect');
         socket.off('connect_error');
     };
-  }, []);
+  }, [activePollFromSocket]);
 
   const selectPersona = (p) => {
     setPersona(p);
