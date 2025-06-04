@@ -70,6 +70,9 @@ function TeacherApp({ socket, activePoll, liveResults, onPollConfirmedAndCleared
     const handleTeacherConfirmation = () => {
         const confirm = window.confirm("Are you sure all students have answered or are done with the current poll? Clicking 'OK' will allow you to create a new poll and clear the previous results.");
         if (confirm) {
+            // --- NEW: Emit event to server to clear the active poll ---
+            socket.emit('clearActivePoll');
+
             setCanCreateNewPoll(true);
             // Call the prop function to clear the active poll in the parent component
             if (onPollConfirmedAndCleared) {
@@ -100,7 +103,7 @@ function TeacherApp({ socket, activePoll, liveResults, onPollConfirmedAndCleared
                                 onChange={(e) => handleOptionChange(index, e.target.value)}
                             />
                             {/* Changed condition here: Only show remove button for options beyond the initial two */}
-                            {index >= 2 && ( 
+                            {index >= 2 && (
                                 <button onClick={() => removeOption(index)} style={{ marginLeft: '10px' }}>Remove</button>
                             )}
                         </div>
