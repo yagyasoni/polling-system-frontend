@@ -56,7 +56,7 @@ function TeacherApp({ socket, activePoll, liveResults, onPollConfirmedAndCleared
         }
 
         try {
-            await axios.post('${process.env.REACT_APP_BACKEND_URL}/api/polls', { question, options: validOptions, durationSeconds });
+            await axios.post(`${process.env.REACT_APP_BACKEND_API_URL}/api/polls`, { question, options: validOptions, durationSeconds });
             alert('Poll created and broadcasted!');
             // After creating a poll, disable the button again
             setCanCreateNewPoll(false);
