@@ -1,38 +1,92 @@
-.App {
+/* App.css */
+body {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.role-selection {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.role-options {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-around;
+  margin: 30px 0;
+}
+
+.role-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  width: 45%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.role-card.selected {
+  border-color: #4CAF50;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+}
+
+button {
+  background-color: #4CAF50;
   color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-.App-link {
-  color: #61dafb;
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.poll-creator {
+  margin-top: 30px;
+}
+
+.option-input {
+  margin: 10px 0;
+}
+
+.poll-results {
+  margin-top: 30px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.vote-bar {
+  height: 20px;
+  background-color: #4CAF50;
+  margin-top: 5px;
+  border-radius: 4px;
+}
+
+.student-dashboard {
+  text-align: center;
+}
+
+.poll-options {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.poll-options li {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+}
+
+.vote-count {
+  margin-left: 10px;
+  color: #666;
 }
