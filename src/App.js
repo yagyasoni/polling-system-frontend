@@ -4,7 +4,8 @@ import StudentApp from './StudentApp';
 import './App.css';
 import io from 'socket.io-client';
 
-const socket = io('https://polling-system-backend-wqqh.onrender.com');
+const socket = io(process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000');
+
 
 function App() {
   const [persona, setPersona] = useState(null);
