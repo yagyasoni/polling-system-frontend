@@ -59,7 +59,7 @@ function StudentApp({ socket, activePoll, liveResults }) {
 
             // Set initial state to active
             setIsPersonalPollActive(true);
-            setPersonalPollStartTime(startTime); // Store start time
+            // setPersonalPollStartTime(startTime); // Store start time
 
             // Calculate and set initial remaining time
             const initialRemaining = Math.max(0, endTime - Date.now());
